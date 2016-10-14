@@ -27,7 +27,8 @@ function getpicurl;
 end
 
 set id 0;
-for url in (wget -O- http://www.733dm.net/mh/21039/ | iconv -f GBK -t utf-8 | grep '<div class="plistBox">' | tr -d '\r' | tr -d '\n' | sed -r 's/<li>/\n<li>/g' | sed -r 's/.*<li><a href="(.*)" title="(.*)">(.*)<\/a><\/li>.*/\1|\2|\3/g' | grep -v div );set purl (echo $url | sed -r 's/(.*)\|(.*)\|(.*)/\1/');
+for url in (wget -O- http://www.733dm.net/mh/21039/ | iconv -f GBK -t utf-8 | grep '<div class="plistBox">' | tr -d '\r' | tr -d '\n' | sed -r 's/<li>/\n<li>/g' | sed -r 's/.*<li><a href="(.*)" title="(.*)">(.*)<\/a><\/li>.*/\1|\2|\3/g' | grep -v div);
+    set purl (echo $url | sed -r 's/(.*)\|(.*)\|(.*)/\1/');
     set id (expr $id + 1);
     set ptitle (echo $url | sed -r 's/(.*)\|(.*)\|(.*)/\2/' | tr -d '[:space:]' );
     echo $purl $ptitle;
@@ -36,6 +37,6 @@ for url in (wget -O- http://www.733dm.net/mh/21039/ | iconv -f GBK -t utf-8 | gr
         set index (expr $index + 1);mkdir $id;getpic $pic $id/$index.jpg $id.733.list;
     end;
     rm -rv $id;
-    /app/comic/backup.fish;
+    /app/comic/backup.fish "戒魔人---"$ptitle;
 end
 
