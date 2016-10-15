@@ -37,7 +37,7 @@ for url in (wget -O- http://www.733dm.net/mh/23915/ | iconv -f GBK -t utf-8 | gr
     for pic in (getpicurl "http://www.733dm.net"$purl);
         set index (expr $index + 1);
         mkdir $id;
-        echo getpic $pic $id/$index.jpg $id.733.list;
+        getpic $pic $id/$index.jpg $id.733.list;
     end;
     rm -rv $id;
     /app/comic/backup.fish "勇者约吗---"$ptitle;
