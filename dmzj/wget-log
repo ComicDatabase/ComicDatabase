@@ -1,0 +1,11 @@
+--2016-10-16 11:21:12--  http://www.dmzj.com/view/mwyyzysjsd/58360.html
+Resolving www.dmzj.com (www.dmzj.com)... 218.6.154.182, 218.6.154.173
+Connecting to www.dmzj.com (www.dmzj.com)|218.6.154.182|:80... connected.
+HTTP request sent, awaiting response... 200 ‘wget-log’
+Length: unspecified [text/html]
+Saving to: ‘STDOUT’
+
+     0K                                                        0.00 =0s
+
+
+Cannot write to ‘-’ (Success).
